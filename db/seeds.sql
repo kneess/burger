@@ -5,4 +5,4 @@ INSERT INTO burgers (burger_name, devoured)
 VALUES ("the_tobiyashi",false);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("the_jenmeister", true);
+VALUES ("the_jenmeister", false);
