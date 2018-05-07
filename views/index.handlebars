@@ -1,4 +1,4 @@
-<h1>Burger</h1>
+<h1>Eat-Da-Burger</h1>
 
 <h2>Undevoured Burgers!</h2>
 
@@ -15,7 +15,9 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block}}
+    <ul>
+    {{id}}.{{burger_name}}
+      </ul>
     {{/if}}
   {{/each}}
 </ul>
