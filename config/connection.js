@@ -18,17 +18,32 @@
 // module.exports = connection;
 
 
-var mysql = require('mysql');
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
+// var mysql = require('mysql');
+// var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-connection.connect();
+// connection.connect();
 
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
+// connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+//   if (err) throw err;
 
-  console.log('The solution is: ', rows[0].solution);
-});
+//   console.log('The solution is: ', rows[0].solution);
+// });
 
-connection.end();
+// connection.end();
 
-module.exports = connection;
+// module.exports = connection;
+
+var connection;
+if(process.env.JAWSDB_URL) {
+  //Heroku deployment
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  //local host
+    connection = mysql.createConnection({
+        root: 3000,
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "burgers_db",
+    });
+};
