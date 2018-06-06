@@ -47,3 +47,5 @@ if(process.env.JAWSDB_URL) {
         database: "burgers_db",
     });
 };
+
+module.exports = connection
